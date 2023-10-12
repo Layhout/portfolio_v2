@@ -1,0 +1,57 @@
+@keyframes ani-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ani-spinning {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ani-x-traverse {
+  0% {
+    transform: translateX(-20vw);
+  }
+
+  50% {
+    transform: translateX(calc((100vw - var(--ball-size, 0)) + 20vw));
+  }
+
+  100% {
+    transform: translateX(-20vw);
+  }
+}
+
+@keyframes ani-y-traverse {
+  0% {
+    transform: translateY(-20vh);
+  }
+
+  50% {
+    transform: translateY(calc((100vh - var(--ball-size, 0)) + 20vh));
+  }
+
+  100% {
+    transform: translateY(-20vh);
+  }
+}
+
+@keyframes ani-noise {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100% 100%;
+  }
+}

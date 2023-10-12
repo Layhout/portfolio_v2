@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/keyFrame.css">
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/mediaQuery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="ball-wrapper" id="idle_bg_FX">
+        <div class="traverse-x">
+            <div class="traverse-y">
+                <div class="ball"></div>
+            </div>
+        </div>
+    </div>
+    <main class="container">
+        <nav class="nav-bar" data-open="false">
+            <div>
+                <button class="nav-btn" id="nav_btn" type="button">
+                    <div>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <button class="theme-btn" id="theme_btn" data-theme="light" type="button">
+                    <div>
+                        <i class="fa-solid fa-sun fa-lg"></i>
+                        <i class="fa-solid fa-moon fa-lg"></i>
+                    </div>
+                </button>
+            </div>
+            <ul class="nav-links" id="nav_links">
+                <li>About</li>
+                <li>Exp & Edu</li>
+                <li>Skill</li>
+                <li>Work</li>
+                <li>Contect</li>
+            </ul>
+        </nav>
+    </main>
+    <script src="src/js/main.js"></script>
+</body>
+
+</html>
