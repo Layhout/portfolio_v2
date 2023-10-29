@@ -325,7 +325,8 @@ section {
   margin-bottom: 56px;
 }
 
-section:first-of-type {
+section:first-of-type,
+section:last-of-type {
   margin: 0;
 }
 
@@ -428,4 +429,17 @@ section:first-of-type {
 .about-section .about-me article p span {
   transition: all 0.3s ease;
   line-height: 1;
+}
+
+.edu-and-exp-section {
+  display: flex;
+  gap: 16px;
+}
+
+.edu-and-exp-section > div {
+  flex: 1;
+}
+
+.edu-and-exp-section > div > h1 {
+  font-size: 36px;
 }
