@@ -4,6 +4,11 @@ const themeBtn = document.querySelector("#theme_btn");
 const navLinks = document.querySelectorAll("#nav_links li");
 const navLinkContainer = document.querySelector("#nav_links");
 const idleBgFX = document.querySelectorAll("#idle_bg_FX div");
+const allDFX = document.querySelectorAll(".drag-fx");
+const allIDFX = document.querySelectorAll(".drag-inv-fx");
+const hero = document.querySelector("#hero");
+const aboutMe = "A web/app developer who's driven by an insatiable hunger for experience and knowledge. My ultimate ambition is to evolve into a proficient full-stack developer.";
+const aboutMeP = document.querySelector("#about_me_text");
 
 idleBgFX.forEach(d => d.style.animationDelay = `-${Math.round(Math.random() * 10)}s`);
 
@@ -39,5 +44,40 @@ navLinks.forEach(l => {
     l.addEventListener("pointerleave", function () {
         navLinkContainer.style.setProperty("--ele-opacity", 0);
     })
+});
+
+document.addEventListener("mousemove", function (e) {
+    const move_x = window.innerWidth / 2 - e.clientX;
+    const move_y = window.innerHeight / 2 - e.clientY;
+    allDFX.forEach(a => {
+        a.style.transform = `translate(${-(move_x * 0.02)}px, ${-(move_y * 0.05)}px)`;
+    })
+    allIDFX.forEach(a => {
+        a.style.transform = `translate(${move_x * 0.02}px, ${move_y * 0.05}px)`;
+    })
+});
+
+aboutMeP.innerHTML = aboutMe.split(" ").map(w => `<span style="opacity: 0.2">${w}</span>`).join(" ");
+
+const lenis = new Lenis()
+
+lenis.on('scroll', (e) => {
+    const { animatedScroll } = e;
+    hero.style.transform = `scale(${Math.max(0.9, 1 - (animatedScroll * 0.0001))})`;
+    hero.style.filter = `blur(${Math.min(10, animatedScroll * 0.01)}px)`;
+    hero.style.opacity = Math.max(0.6, 1 - (animatedScroll * 0.001));
+
+    aboutMeP.querySelectorAll("span").forEach(s => {
+        let { top, left } = s.getBoundingClientRect();
+        top = top - (window.innerHeight * 0.75);
+        let opacityVal = (top * 0.01) + (left * 0.001) < 0 ? 1 : 0.2;
+        s.style.opacity = opacityVal;
+    })
 })
 
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)

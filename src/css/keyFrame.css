@@ -55,3 +55,16 @@
     background-position: 100% 100%;
   }
 }
+
+@keyframes ani-blur-fade-up {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
