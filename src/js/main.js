@@ -7,7 +7,7 @@ const idleBgFX = document.querySelectorAll("#idle_bg_FX div");
 const allDFX = document.querySelectorAll(".drag-fx");
 const allIDFX = document.querySelectorAll(".drag-inv-fx");
 const hero = document.querySelector("#hero");
-const aboutMe = "A web/app developer who's driven by an insatiable hunger for experience and knowledge. My ultimate ambition is to evolve into a proficient full-stack developer.";
+const aboutMe = `A web/mobile developer with ${new Date().getFullYear() - 2021}+ years experience who's driven by an insatiable hunger for experience and knowledge. My ultimate ambition is to evolve into a proficient full-stack developer.`;
 const aboutMeP = document.querySelector("#about_me_text");
 
 idleBgFX.forEach(d => d.style.animationDelay = `-${Math.round(Math.random() * 10)}s`);

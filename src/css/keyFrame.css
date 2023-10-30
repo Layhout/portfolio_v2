@@ -62,9 +62,30 @@
     opacity: 0;
     filter: blur(10px);
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
     filter: blur(0);
+  }
+}
+
+@keyframes ani-bg-v-line {
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes ani-spining-ball-v-line {
+  from {
+    transform: translate(-50%, -100%) rotate(0);
+  }
+
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
   }
 }
