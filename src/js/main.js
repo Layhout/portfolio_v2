@@ -9,6 +9,8 @@ const allIDFX = document.querySelectorAll(".drag-inv-fx");
 const hero = document.querySelector("#hero");
 const aboutMe = `A web/mobile developer with ${new Date().getFullYear() - 2021}+ years experience who's driven by an insatiable hunger for experience and knowledge. My ultimate ambition is to evolve into a proficient full-stack developer.`;
 const aboutMeP = document.querySelector("#about_me_text");
+const tiltingFXWrapper = document.querySelectorAll(".tilting-wrapper");
+const tilt_strength = 0.05;
 
 idleBgFX.forEach(d => d.style.animationDelay = `-${Math.round(Math.random() * 10)}s`);
 
@@ -59,6 +61,33 @@ document.addEventListener("mousemove", function (e) {
 
 aboutMeP.innerHTML = aboutMe.split(" ").map(w => `<span style="opacity: 0.2">${w}</span>`).join(" ");
 
+tiltingFXWrapper.forEach(t => {
+    t.addEventListener("mousemove", function (e) {
+        console.log(e);
+        const selfProps = this.getBoundingClientRect();
+        const mouseX = e.clientX - selfProps.x;
+        const mouseY = e.clientY - selfProps.y;
+        const halfX = this.scrollWidth / 2;
+        const halfY = this.scrollHeight / 2;
+
+        const tiltBody = this.querySelector(".tilting-body");
+        tiltBody.style.transform = ` perspective(800px) rotateY(${(halfX - mouseX) * -tilt_strength}deg) rotateX(${(halfY - mouseY) * tilt_strength}deg)`;
+        tiltBody.style.transitionDuration = "0.1s";
+
+        const topLayer = this.querySelector(".top-layer");
+        topLayer.style.transform = `translateX(${((mouseX / this.scrollWidth) - 0.5) * 4}%) translateY(${((mouseY / this.scrollHeight) - 0.5) * 4}%)`;
+        topLayer.style.transitionDuration = "0.1s";
+    });
+
+    t.addEventListener("mouseleave", function (e) {
+        this.querySelector(".tilting-body").removeAttribute("style");
+        this.querySelector(".top-layer").removeAttribute("style");
+    })
+})
+
+/**
+ * lenis library
+ */
 const lenis = new Lenis()
 
 lenis.on('scroll', (e) => {
@@ -76,8 +105,11 @@ lenis.on('scroll', (e) => {
 })
 
 function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
+    lenis.raf(time);
+    requestAnimationFrame(raf);
 }
 
-requestAnimationFrame(raf)
+requestAnimationFrame(raf);
+/**
+ * 
+ */
