@@ -39,11 +39,11 @@
                 </button>
             </div>
             <ul class="nav-links" id="nav_links">
-                <li>About</li>
-                <li>Edu & Exp</li>
-                <li>Skill</li>
-                <li>Work</li>
-                <li>Contect</li>
+                <li data-section="about_section">About</li>
+                <li data-section="ee_section">Edu & Exp</li>
+                <li data-section="skill_section">Skill</li>
+                <li data-section="work_section">Work</li>
+                <li data-section="contact_section">Contect</li>
             </ul>
         </nav>
         <section class="about-section" id="about_section">
@@ -81,7 +81,7 @@
                 </article>
             </div>
         </section>
-        <section class="edu-and-exp-section">
+        <section class="edu-and-exp-section" id="ee_section">
             <div>
                 <h1 class="section-title">Education</h1>
                 <div class="e-wrapper fade-mask">
@@ -163,9 +163,9 @@
                 </div>
             </div>
         </section>
-        <section class="skill-section">
+        <section class="skill-section" id="skill_section">
+            <h1 class="section-title">Programming Languages</h1>
             <div class="skill-wrapper">
-                <h1 class="section-title">Programming Languages</h1>
                 <div class="skill" style="background-color: hsl(18, 100%, 90%)">
                     <div style="--skill-bg-color: #f06529; width: 90%;"></div>
                     <h1 class="skill-name">HTML</h1>
@@ -211,8 +211,8 @@
                     <h1 class="skill-name">SQL</h1>
                 </div>
             </div>
+            <h1 class="section-title">Libraries / Frameworks</h1>
             <div class="skill-wrapper">
-                <h1 class="section-title">Libraries / Frameworks</h1>
                 <div class="skill" style="background-color: hsl(192, 100%, 90%)">
                     <div style="--skill-bg-color: #61DBFB; width: 85%;"></div>
                     <h1 class="skill-name">React js</h1>
@@ -257,9 +257,13 @@
                     <div style="--skill-bg-color: #1664ba; width: 40%;"></div>
                     <h1 class="skill-name">Vuetify</h1>
                 </div>
+                <div class="skill" style="background-color: hsl(137, 100%, 90%)">
+                    <div style="--skill-bg-color: #2ced64; width: 40%;"></div>
+                    <h1 class="skill-name">Mongodb</h1>
+                </div>
             </div>
         </section>
-        <section class="work-section">
+        <section class="work-section" id="work_section">
             <h1 class="section-title">Work</h1>
             <div class="portfolio-grid">
                 <div class="tilting-wrapper">
@@ -306,6 +310,25 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact-section" id="contact_section">
+            <h1 class="section-title">Contacts</h1>
+            <div class="contact-links-container">
+                <div>
+                    <ul class="personal">
+                        <li class="click-copy"><span>layhoutchea79@gmail.com</span><button>Copy</button></li>
+                        <li class="click-copy"><span>+855 96 336 9000</span><button>Copy</button></li>
+                        <li>Based in Phnom Penh, Cambodia.</li>
+                    </ul>
+                    <ul class="social-media">
+                        <li><a href="#">Telegram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Github</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
                 </div>
             </div>
         </section>

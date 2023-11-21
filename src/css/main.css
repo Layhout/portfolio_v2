@@ -132,6 +132,14 @@ img {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
+span {
+  color: inherit;
+}
+
 .btn {
   text-transform: uppercase;
   font-weight: 900;
@@ -307,7 +315,7 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  gap: 6px;
+  /* gap: 6px; */
   overflow: hidden;
   z-index: -1;
 }
@@ -323,14 +331,14 @@ img {
   height: var(--ele-height, 0px);
   transform: translate(var(--ele-pos-x, 0px), var(--ele-pos-y, 0px));
   opacity: var(--ele-opacity, 0);
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .nav-bar .nav-links > li {
   transition: all 0.7s var(--ease-out-quart, ease);
   cursor: pointer;
   transform: translateY(100%);
-  padding: 8px 12px;
+  padding: 8px 18px;
   white-space: nowrap;
 }
 
@@ -351,12 +359,8 @@ section:last-of-type {
   margin: 0;
 }
 
-section:last-of-type {
-  padding-bottom: 32px;
-}
-
 .section-title {
-  font-size: 36px;
+  font-size: 3rem;
 }
 
 .about-section .hero {
@@ -386,7 +390,7 @@ section:last-of-type {
   justify-content: center;
   align-items: center;
   gap: 32px;
-  font-size: 32px;
+  font-size: 2rem;
   transform: translate(100px);
 }
 
@@ -405,7 +409,7 @@ section:last-of-type {
   line-height: 1;
   color: var(--color-primary-500);
   text-transform: uppercase;
-  font-size: 250px;
+  font-size: 15rem;
   font-weight: 900;
 }
 
@@ -441,11 +445,11 @@ section:last-of-type {
 }
 
 .about-section .about-me article {
-  max-width: 800px;
+  max-width: 1200px;
   width: 100%;
   text-align: center;
   font-weight: 500;
-  font-size: 40px;
+  font-size: 3rem;
 }
 
 .about-section .about-me article p {
@@ -526,7 +530,7 @@ section:last-of-type {
 
 .edu-and-exp-section .e-wrapper .e-item .e-details > h2 {
   color: var(--color-gray-400);
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -536,6 +540,7 @@ section:last-of-type {
   gap: 32px;
   align-items: flex-start;
   margin-bottom: 64px;
+  margin-top: 32px;
 }
 
 .skill-section .skill-wrapper .skill {
@@ -632,7 +637,7 @@ section:last-of-type {
 .work-section .portfolio-grid > .tilting-wrapper > .tilting-body .top-layer p {
   color: white;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 1.25rem;
   line-height: 1.3;
 }
 
@@ -642,4 +647,81 @@ section:last-of-type {
 
 .work-section .portfolio-grid > .tilting-wrapper > .tilting-body .top-layer > div:last-child {
   text-align: right;
+}
+
+.contact-section {
+  height: 80vh;
+  padding-top: 6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section .contact-links-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.contact-section .contact-links-container > div {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-section .contact-links-container > div ul {
+  list-style: none;
+}
+
+.contact-section .contact-links-container > div ul li {
+  font-weight: 600;
+}
+
+.contact-section .contact-links-container > div .personal {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  justify-content: space-between;
+}
+
+.contact-section .contact-links-container > div .personal li {
+  color: var(--color-gray-400);
+}
+
+.contact-section .contact-links-container > div .social-media {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 5rem;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.click-copy {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.click-copy button {
+  font-size: 1.25rem;
+  color: var(--color-gray-400);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.click-copy:hover button {
+  opacity: 1;
 }
