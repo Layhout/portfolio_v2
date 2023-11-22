@@ -335,11 +335,15 @@ span {
 }
 
 .nav-bar .nav-links > li {
-  transition: all 0.7s var(--ease-out-quart, ease);
+  transition: transform 0.7s var(--ease-out-quart, ease);
   cursor: pointer;
   transform: translateY(100%);
   padding: 8px 18px;
   white-space: nowrap;
+}
+
+.nav-bar .nav-links > li:hover {
+  text-decoration: underline;
 }
 
 .nav-bar[data-open="true"] .nav-links {
@@ -586,7 +590,8 @@ section:last-of-type {
 }
 
 .work-section .portfolio-grid > .tilting-wrapper:hover {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
+  scale: 1.05;
 }
 
 .work-section .portfolio-grid > .tilting-wrapper:hover > .tilting-body {
@@ -724,4 +729,20 @@ section:last-of-type {
 
 .click-copy:hover button {
   opacity: 1;
+}
+
+.aos-fade-in {
+  animation: ani-aos-fade-in 1s ease forwards;
+}
+
+[data-aos="fade-in"] {
+  opacity: 0;
+}
+
+.aos-slide-in-left {
+  animation: ani-aos-slide-in-left 1s ease forwards;
+}
+
+[data-aos="slide-in-left"] {
+  transform: translateX(-100%);
 }

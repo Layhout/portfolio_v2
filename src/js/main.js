@@ -13,6 +13,7 @@ const tiltingFXWrapper = document.querySelectorAll(".tilting-wrapper");
 const tilt_strength = 0.05;
 const allClickCopy = document.querySelectorAll(".click-copy");
 const allSections = document.querySelectorAll("section");
+const allAos = document.querySelectorAll("[data-aos]");
 
 let onScreenSection = 0;
 
@@ -70,6 +71,13 @@ function setNavLinksHoverFX(x, y, width, height) {
     navLinkContainer.style.setProperty("--ele-height", `${height}px`);
 }
 
+setNavLinksHoverFX(
+    navLinks[onScreenSection].offsetLeft,
+    navLinks[onScreenSection].offsetTop,
+    navLinks[onScreenSection].scrollWidth,
+    navLinks[onScreenSection].scrollHeight
+);
+
 navLinks.forEach((l, i) => {
     l.addEventListener("click", function (e) {
         lenis.scrollTo(`#${this.dataset.section}`, { offset: -100 });
@@ -79,8 +87,9 @@ navLinks.forEach((l, i) => {
 
 window.addEventListener("scroll", function (e) {
     allSections.forEach((as, i) => {
-        const middleScreen = this.scrollY + document.documentElement.clientHeight / 2;
-        if (middleScreen > as.offsetTop && middleScreen < as.offsetTop + as.scrollHeight) {
+        const { y, height } = as.getBoundingClientRect();
+        const middleScreen = document.documentElement.clientHeight / 2;
+        if (middleScreen > y && middleScreen < y + height) {
             onScreenSection = i;
             setNavLinksHoverFX(
                 navLinks[onScreenSection].offsetLeft,
@@ -88,6 +97,21 @@ window.addEventListener("scroll", function (e) {
                 navLinks[onScreenSection].scrollWidth,
                 navLinks[onScreenSection].scrollHeight
             );
+        }
+    })
+
+    allAos.forEach(aos => {
+        const { y } = aos.getBoundingClientRect();
+        const showPoint = document.documentElement.clientHeight - 150;
+        if (showPoint > y && !aos.classList.toString().includes("aos")) {
+            switch (aos.dataset.aos) {
+                case "fade-in":
+                    aos.classList.add("aos-fade-in");
+                    break;
+                case "slide-in-left":
+                    aos.classList.add("aos-slide-in-left");
+                    break;
+            }
         }
     })
 })
