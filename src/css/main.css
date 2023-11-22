@@ -325,7 +325,7 @@ span {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #d1d5db;
+  background-color: var(--color-zinc-200);
   border-radius: 8px;
   width: var(--ele-width, 0px);
   height: var(--ele-height, 0px);
