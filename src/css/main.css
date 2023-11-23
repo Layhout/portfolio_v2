@@ -101,6 +101,8 @@ i {
 body {
   background-color: var(--color-neutral-100);
   position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body::after {
@@ -130,6 +132,8 @@ ul {
 
 img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 a {
@@ -207,8 +211,8 @@ span {
 .nav-bar {
   padding: 8px;
   border-radius: 12px;
-  backdrop-filter: blur(2px);
-  background-color: rgb(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+  background-color: rgb(255, 255, 255, 0.7);
   position: fixed;
   top: 16px;
   left: 50%;
@@ -315,7 +319,6 @@ span {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* gap: 6px; */
   overflow: hidden;
   z-index: -1;
 }
@@ -340,6 +343,7 @@ span {
   transform: translateY(100%);
   padding: 8px 18px;
   white-space: nowrap;
+  font-size: 1rem;
 }
 
 .nav-bar .nav-links > li:hover {
@@ -419,13 +423,17 @@ section:last-of-type {
 
 .about-section .hero .name-wrapper:last-of-type h1 {
   color: transparent;
-  -webkit-text-stroke: 5px var(--color-primary-500);
+  -webkit-text-stroke: 3px var(--color-primary-500);
 }
 
 .about-section .hero .me-png {
   position: relative;
-  max-width: 450px;
+  height: 90vh;
   animation: ani-blur-fade-up 2s ease;
+}
+
+.about-section .hero .me-png img {
+  object-position: bottom center;
 }
 
 .drag-fx,
@@ -460,7 +468,7 @@ section:last-of-type {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.625vw;
+  gap: 0.7vw;
 }
 
 .about-section .about-me article p span {
@@ -656,7 +664,6 @@ section:last-of-type {
 
 .contact-section {
   height: 80vh;
-  padding-top: 6rem;
   display: flex;
   flex-direction: column;
 }

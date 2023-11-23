@@ -48,7 +48,9 @@ requestAnimationFrame(raf);
 
 idleBgFX.forEach(d => d.style.animationDelay = `-${Math.round(Math.random() * 10)}s`);
 
-navBtn.addEventListener("click", function () {
+navBtn.addEventListener("click", openNav);
+
+function openNav() {
     if (nav.dataset.open === "false") {
         nav.dataset.open = "true";
         navLinks.forEach((l, i) => l.style.transitionDelay = `${i * 0.09 + 0.1}s`);
@@ -58,7 +60,7 @@ navBtn.addEventListener("click", function () {
         navLinks.forEach((l, i) => l.style.transitionDelay = `${i * 0.09}s`);
         navLinkContainer.style.setProperty("--ele-opacity", 0)
     }
-})
+}
 
 themeBtn.addEventListener("click", function () {
     this.dataset.theme = this.dataset.theme === "light" ? "dark" : "light"
@@ -82,6 +84,7 @@ navLinks.forEach((l, i) => {
     l.addEventListener("click", function (e) {
         lenis.scrollTo(`#${this.dataset.section}`, { offset: -100 });
         onScreenSection = i;
+        openNav();
     })
 });
 

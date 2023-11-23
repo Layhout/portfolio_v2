@@ -1,35 +1,286 @@
+/* xs */
+@media (min-width: 0px) {
+  .container {
+    max-width: unset;
+    padding: 0 16px;
+  }
+
+  .nav-bar {
+    width: 90%;
+    transition-delay: 0s;
+    overflow: hidden;
+    max-height: 64px;
+  }
+
+  .nav-bar[data-open="true"] {
+    width: 90%;
+    max-height: 381px;
+  }
+
+  .nav-bar .nav-links {
+    position: static;
+    transform: translate(0, 0);
+    flex-direction: column;
+    align-items: stretch;
+    transition: all 1s var(--ease-out-quart);
+    padding-top: 0.5rem;
+  }
+
+  .nav-bar .nav-links > li {
+    text-align: center;
+    transform: translateY(0) scale(0.9);
+    padding: 0.75rem 0;
+    opacity: 0;
+    transition: all 0.7s var(--ease-out-quart, ease);
+    font-size: 1.2rem;
+  }
+
+  .nav-bar[data-open="true"] .nav-links > li {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  .about-section .hero .name-wrapper {
+    top: 80%;
+  }
+
+  .about-section .hero .name-wrapper h1 {
+    font-size: 5rem;
+  }
+
+  .about-section .hero .name-wrapper .social {
+    display: none;
+  }
+
+  .about-section .hero .name-wrapper:last-of-type h1 {
+    -webkit-text-stroke: 2px var(--color-primary-500);
+  }
+
+  .about-section .about-me article {
+    font-size: 1.5rem;
+  }
+
+  .about-section .about-me article p {
+    gap: 1vw;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .edu-and-exp-section {
+    flex-direction: column;
+  }
+
+  .skill-section .skill-wrapper,
+  .work-section .portfolio-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .contact-section {
+    height: auto;
+  }
+
+  .contact-section .contact-links-container {
+    align-items: initial;
+    padding: 5rem 0;
+    gap: 5rem;
+  }
+
+  .contact-section .contact-links-container > div {
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5rem;
+  }
+
+  .contact-section .contact-links-container > div .personal {
+    gap: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .contact-section .contact-links-container > div .social-media {
+    grid-template-columns: repeat(2, auto);
+    font-size: 2.5rem;
+    column-gap: 0;
+    justify-content: space-between;
+  }
+}
+
 /* sm */
 @media (min-width: 640px) {
   .container {
-    max-width: 640px;
+    max-width: 608px;
     padding: 0;
+  }
+
+  .about-section .hero .name-wrapper h1 {
+    font-size: 8rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-section .contact-links-container > div .personal {
+    font-size: 2rem;
+  }
+
+  .contact-section .contact-links-container > div .social-media {
+    font-size: 3rem;
+    gap: 5rem;
   }
 }
 
 /* md */
 @media (min-width: 768px) {
   .container {
-    max-width: 768px;
+    max-width: 736px;
+  }
+
+  .nav-bar {
+    width: 300px;
+    transition-delay: 0.5s;
+    overflow: initial;
+  }
+
+  .nav-bar[data-open="true"] {
+    width: 768px;
+  }
+
+  .nav-bar .nav-links {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    flex-direction: row;
+    align-items: center;
+    padding-top: 0;
+    transition: none;
+  }
+
+  .nav-bar .nav-links > li {
+    transition: transform 0.7s var(--ease-out-quart, ease);
+    cursor: pointer;
+    transform: translateY(100%);
+    padding: 8px 18px;
+    white-space: nowrap;
+    font-size: 1rem;
+    opacity: 1;
+  }
+
+  .nav-bar[data-open="true"] .nav-links > li {
+    transform: translateY(0);
+  }
+
+  .about-section .hero .name-wrapper h1 {
+    font-size: 8rem;
+  }
+
+  .about-section .hero .name-wrapper:last-of-type h1 {
+    -webkit-text-stroke: 3px var(--color-primary-500);
+  }
+
+  .about-section .about-me article {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .edu-and-exp-section {
+    flex-direction: row;
+  }
+
+  .skill-section .skill-wrapper,
+  .work-section .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* lg */
 @media (min-width: 1024px) {
   .container {
-    max-width: 1024px;
+    max-width: 992px;
+  }
+
+  .about-section .hero .name-wrapper {
+    top: 50%;
+  }
+
+  .about-section .hero .name-wrapper h1 {
+    font-size: 8rem;
+  }
+
+  .about-section .hero .name-wrapper .social {
+    display: flex;
+  }
+
+  .about-section .about-me article p {
+    gap: 0.7vw;
+  }
+
+  .contact-section .contact-links-container {
+    align-items: center;
+  }
+
+  .contact-section .contact-links-container > div .social-media {
+    gap: 2rem;
+    grid-template-columns: repeat(3, auto);
   }
 }
 
 /* xl */
 @media (min-width: 1280px) {
   .container {
-    max-width: 1280px;
+    max-width: 1248px;
+  }
+
+  .about-section .hero .name-wrapper h1 {
+    font-size: 13rem;
+  }
+
+  .about-section .about-me article {
+    font-size: 3rem;
+  }
+
+  .skill-section .skill-wrapper,
+  .work-section .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact-section {
+    height: 80vh;
+  }
+
+  .contact-section .contact-links-container {
+    padding: 0;
+  }
+
+  .contact-section .contact-links-container > div {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .contact-section .contact-links-container > div .personal {
+    gap: 0;
+  }
+
+  .contact-section .contact-links-container > div .social-media {
+    gap: 3rem;
   }
 }
 
 /* 2xl */
 @media (min-width: 1536px) {
   .container {
-    max-width: 1536px;
+    max-width: 1504px;
+  }
+
+  .about-section .hero .name-wrapper h1 {
+    font-size: 15rem;
+  }
+
+  .contact-section .contact-links-container > div .social-media {
+    gap: 5rem;
   }
 }
