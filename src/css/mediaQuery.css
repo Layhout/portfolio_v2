@@ -105,6 +105,10 @@
     column-gap: 0;
     justify-content: space-between;
   }
+
+  .work-section .portfolio-grid > .tilting-wrapper > .tilting-body .top-layer p {
+    font-size: 1rem;
+  }
 }
 
 /* sm */
@@ -129,6 +133,10 @@
   .contact-section .contact-links-container > div .social-media {
     font-size: 3rem;
     gap: 5rem;
+  }
+
+  .work-section .portfolio-grid > .tilting-wrapper > .tilting-body .top-layer p {
+    font-size: 1.25rem;
   }
 }
 
@@ -195,6 +203,10 @@
   .work-section .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .work-section .portfolio-grid > .tilting-wrapper > .tilting-body .top-layer p {
+    font-size: 0.8rem;
+  }
 }
 
 /* lg */
@@ -227,6 +239,10 @@
     gap: 2rem;
     grid-template-columns: repeat(3, auto);
   }
+
+  .work-section .portfolio-grid > .tilting-wrapper > .tilting-body .top-layer p {
+    font-size: 1.25rem;
+  }
 }
 
 /* xl */
@@ -243,8 +259,7 @@
     font-size: 3rem;
   }
 
-  .skill-section .skill-wrapper,
-  .work-section .portfolio-grid {
+  .skill-section .skill-wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -282,5 +297,44 @@
 
   .contact-section .contact-links-container > div .social-media {
     gap: 5rem;
+  }
+
+  .work-section .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (any-hover: none) {
+  .work-section .portfolio-grid > .tilting-wrapper > .tilting-body {
+    background-color: white;
+  }
+
+  .work-section .portfolio-grid > .tilting-wrapper > .tilting-body .top-layer {
+    position: static;
+    background-color: white;
+    opacity: 1;
+  }
+
+  .work-section .portfolio-grid > .tilting-wrapper > .tilting-body .top-layer p {
+    color: black;
+    /* font-size: 1rem; */
+    margin-bottom: 8px;
+  }
+
+  .work-section .portfolio-grid > .tilting-wrapper:hover > .tilting-body::after {
+    background-color: transparent;
+  }
+
+  .work-section .portfolio-grid > .tilting-wrapper:hover > .tilting-body img {
+    opacity: 1;
+  }
+
+  .work-section .portfolio-grid > .tilting-wrapper:hover {
+    /* transform: scale(1.05); */
+    scale: 1;
+  }
+
+  .work-section .portfolio-grid > .tilting-wrapper:hover > .tilting-body {
+    background-color: white;
   }
 }
