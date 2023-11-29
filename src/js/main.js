@@ -15,6 +15,13 @@ const allClickCopy = document.querySelectorAll(".click-copy");
 const allSections = document.querySelectorAll("section");
 const allAos = document.querySelectorAll("[data-aos]");
 
+const localTheme = localStorage.getItem("theme");
+
+if (localTheme) {
+    themeBtn.dataset.theme = localTheme;
+    document.body.dataset.theme = localTheme;
+}
+
 let onScreenSection = 0;
 
 /**
@@ -63,7 +70,10 @@ function openNav() {
 }
 
 themeBtn.addEventListener("click", function () {
-    this.dataset.theme = this.dataset.theme === "light" ? "dark" : "light"
+    const theme = this.dataset.theme === "light" ? "dark" : "light"
+    this.dataset.theme = theme;
+    document.body.dataset.theme = theme;
+    localStorage.setItem("theme", theme);
 })
 
 function setNavLinksHoverFX(x, y, width, height) {

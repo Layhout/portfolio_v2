@@ -318,7 +318,6 @@
 
   .work-section .portfolio-grid > .tilting-wrapper > .tilting-body .top-layer p {
     color: black;
-    /* font-size: 1rem; */
     margin-bottom: 8px;
   }
 
@@ -331,11 +330,28 @@
   }
 
   .work-section .portfolio-grid > .tilting-wrapper:hover {
-    /* transform: scale(1.05); */
     scale: 1;
   }
 
   .work-section .portfolio-grid > .tilting-wrapper:hover > .tilting-body {
     background-color: white;
+  }
+
+  [data-theme="dark"] .work-section .portfolio-grid > .tilting-wrapper > .tilting-body .top-layer p {
+    color: var(--color-gray-200);
+  }
+
+  [data-theme="dark"] .work-section .portfolio-grid > .tilting-wrapper:hover > .tilting-body,
+  [data-theme="dark"] .work-section .portfolio-grid > .tilting-wrapper > .tilting-body .top-layer,
+  [data-theme="dark"] .work-section .portfolio-grid > .tilting-wrapper > .tilting-body {
+    background-color: var(--color-neutral-800);
+  }
+
+  .click-copy button {
+    opacity: 0.5;
+  }
+
+  .click-copy:hover button {
+    opacity: 0.5;
   }
 }

@@ -211,7 +211,7 @@ span {
 .nav-bar {
   padding: 8px;
   border-radius: 12px;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(4px);
   background-color: rgb(255, 255, 255, 0.7);
   position: fixed;
   top: 16px;
@@ -306,6 +306,10 @@ span {
 
 .nav-bar .theme-btn > div > i:last-child {
   transform: rotate(180deg);
+}
+
+.nav-bar .theme-btn > div > i {
+  color: black;
 }
 
 .nav-bar .theme-btn[data-theme="dark"] > div {
@@ -500,8 +504,9 @@ section:last-of-type {
 }
 
 .edu-and-exp-section .e-wrapper .e-item .v-line {
+  --line-color: #374151;
   width: 2px;
-  background: linear-gradient(var(--color-gray-700), var(--color-gray-700) 7px, transparent 7px, transparent 14px);
+  background: linear-gradient(var(--line-color), var(--line-color) 7px, transparent 7px, transparent 14px);
   background-size: 100% 14px;
   animation: ani-bg-v-line 22s infinite linear;
   margin-top: 34px;
@@ -516,7 +521,7 @@ section:last-of-type {
   height: 38px;
   animation: ani-spining-ball-v-line 22s infinite linear;
   border-radius: 50%;
-  border: 2px dashed var(--color-gray-700);
+  border: 2px dashed var(--line-color);
   box-shadow: inset 0px 0px 0px 10px transparent;
 }
 
@@ -557,9 +562,10 @@ section:last-of-type {
 
 .skill-section .skill-wrapper .skill {
   position: relative;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 16px 22px;
   overflow: hidden;
+  background-color: var(--skill-bg-offset-color);
 }
 
 .skill-section .skill-wrapper .skill div {
@@ -567,7 +573,7 @@ section:last-of-type {
   top: 0;
   left: 0;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
   background-image: linear-gradient(to right, transparent, var(--skill-bg-color));
 }
 
@@ -752,4 +758,45 @@ section:last-of-type {
 
 [data-aos="slide-in-left"] {
   transform: translateX(-100%);
+}
+
+body[data-theme="dark"] {
+  background-color: var(--color-neutral-800);
+}
+
+body[data-theme="dark"] .btn {
+  color: black;
+}
+
+body[data-theme="dark"]::after {
+  background-image: url("../assets/imgs/grain_dark.png");
+}
+
+body[data-theme="dark"] .ball-wrapper .ball {
+  opacity: 0.5;
+}
+
+body[data-theme="dark"] * {
+  color: var(--color-gray-200);
+}
+
+body[data-theme="dark"] .nav-bar {
+  background-color: rgb(0, 0, 0, 0.7);
+}
+
+body[data-theme="dark"] .nav-bar .nav-links::before {
+  background-color: var(--color-zinc-500);
+}
+
+body[data-theme="dark"] .edu-and-exp-section .e-wrapper .e-item .v-line {
+  --line-color: #d1d5db;
+}
+
+body[data-theme="dark"] .edu-and-exp-section .e-wrapper .e-item .e-details > h2 {
+  color: var(--color-gray-300);
+}
+
+body[data-theme="dark"] .skill-section .skill-wrapper .skill {
+  background-color: transparent;
+  box-shadow: inset 0 0 10px 3px var(--skill-bg-offset-color);
 }
