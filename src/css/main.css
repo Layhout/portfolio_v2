@@ -313,7 +313,7 @@ span {
 }
 
 .nav-bar .theme-btn[data-theme="dark"] > div {
-  transform: translate(-50%, -50%) rotate(-180deg);
+  transform: translate(-50%, -50%) rotate(180deg);
 }
 
 .nav-bar .nav-links {
@@ -669,7 +669,7 @@ section:last-of-type {
 }
 
 .contact-section {
-  height: 80vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
 }
@@ -781,7 +781,7 @@ body[data-theme="dark"] * {
 }
 
 body[data-theme="dark"] .nav-bar {
-  background-color: rgb(0, 0, 0, 0.7);
+  background-color: rgb(0, 0, 0, 0.4);
 }
 
 body[data-theme="dark"] .nav-bar .nav-links::before {
