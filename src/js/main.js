@@ -27,6 +27,13 @@ if (localTheme) {
     localStorage.setItem("theme", localTheme);
 }
 
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+    const newTheme = event.matches ? "dark" : "light";
+    themeBtn.dataset.theme = newTheme;
+    document.body.dataset.theme = newTheme;
+    localStorage.setItem("theme", newTheme);
+});
+
 let onScreenSection = 0;
 
 /**
