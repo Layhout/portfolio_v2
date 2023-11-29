@@ -15,11 +15,16 @@ const allClickCopy = document.querySelectorAll(".click-copy");
 const allSections = document.querySelectorAll("section");
 const allAos = document.querySelectorAll("[data-aos]");
 
-const localTheme = localStorage.getItem("theme");
+let localTheme = localStorage.getItem("theme");
 
 if (localTheme) {
     themeBtn.dataset.theme = localTheme;
     document.body.dataset.theme = localTheme;
+} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    localTheme = "dark";
+    themeBtn.dataset.theme = localTheme;
+    document.body.dataset.theme = localTheme;
+    localStorage.setItem("theme", localTheme);
 }
 
 let onScreenSection = 0;
