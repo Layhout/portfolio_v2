@@ -113,3 +113,23 @@
     transform: translateX(0);
   }
 }
+
+@keyframes ani-slide-down {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(110%);
+  }
+}
+
+@keyframes ani-slide-up {
+  from {
+    transform: translateY(110%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}

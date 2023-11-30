@@ -14,6 +14,7 @@ const tilt_strength = 0.05;
 const allClickCopy = document.querySelectorAll(".click-copy");
 const allSections = document.querySelectorAll("section");
 const allAos = document.querySelectorAll("[data-aos]");
+const intro = document.querySelector("#intro");
 
 let localTheme = localStorage.getItem("theme");
 
@@ -189,4 +190,16 @@ allClickCopy.forEach(acc => {
             this.querySelector("button").innerHTML = "Copy";
         }, 3000)
     })
-})
+});
+
+setTimeout(() => {
+    const imgWrapper = intro.querySelector("div:last-child");
+    const img = intro.querySelector("img");
+    imgWrapper.style.top = "48px";
+    imgWrapper.style.width = "50px";
+    img.style.filter = `invert(${localTheme === "light" || !localTheme ? "0" : "0.9"})`;
+    setTimeout(() => {
+        intro.style.display = "none";
+        document.querySelector("#my_logo").style.opacity = 1;
+    }, 1200);
+}, 2000)
