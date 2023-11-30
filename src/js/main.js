@@ -52,7 +52,9 @@ lenis.on('scroll', (e) => {
         let { top, left } = s.getBoundingClientRect();
         top = top - (window.innerHeight * 0.75);
         let opacityVal = (top * 0.01) + (left * 0.001) < 0 ? 1 : 0.2;
+        let blurVal = (top * 0.01) + (left * 0.001) < 0 ? 0 : 2;
         s.style.opacity = opacityVal;
+        s.style.filter = `blur(${blurVal}px)`;
     })
 })
 

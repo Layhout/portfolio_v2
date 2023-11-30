@@ -469,8 +469,10 @@ section:last-of-type {
 .about-section .about-me {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 3rem;
   position: relative;
   z-index: 1;
 }
@@ -780,7 +782,8 @@ body[data-theme="dark"] {
   background-color: var(--color-neutral-800);
 }
 
-body[data-theme="dark"] .btn {
+body[data-theme="dark"] .btn,
+body[data-theme="dark"] .btn * {
   color: black;
 }
 
