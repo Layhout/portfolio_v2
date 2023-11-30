@@ -716,7 +716,8 @@ section:last-of-type {
   justify-content: space-between;
 }
 
-.contact-section .contact-links-container > div .personal li {
+.contact-section .contact-links-container > div .personal li,
+.contact-section .contact-links-container > div .personal li span {
   color: var(--color-gray-400);
 }
 
@@ -818,6 +819,11 @@ body[data-theme="dark"] .skill-section .skill-wrapper .skill {
 
 body[data-theme="dark"] .nav-bar .logo img {
   filter: invert(0.9);
+}
+
+body[data-theme="dark"] .contact-section .contact-links-container > div .personal li,
+body[data-theme="dark"] .contact-section .contact-links-container > div .personal li span {
+  color: var(--color-gray-300);
 }
 
 .intro {
