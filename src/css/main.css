@@ -862,6 +862,6 @@ body[data-theme="dark"] .contact-section .contact-links-container > div .persona
 .intro img {
   filter: invert(1);
   transform: translateY(110%);
-  animation: ani-slide-up 1.5s var(--ease-out-quart, ease) 0.3s forwards;
+  animation: ani-slide-up 1.5s var(--ease-out-quart, ease) 0.5s forwards;
   transition: all 1s var(--ease-out-quart, ease);
 }
