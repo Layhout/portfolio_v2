@@ -170,7 +170,7 @@ span {
   overflow: hidden;
   opacity: 0;
   z-index: -1;
-  animation: ani-fade-in 5s ease forwards;
+  animation: ani-fade-in 5s ease 3s forwards;
   filter: blur(100px);
 }
 
@@ -322,7 +322,6 @@ span {
 }
 
 .nav-bar .logo img {
-  opacity: 0;
   transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s;
 }
 
@@ -428,7 +427,7 @@ section:last-of-type {
 }
 
 .about-section .hero .name-wrapper > div {
-  animation: ani-blur-fade-up 1.5s ease 0.5s forwards;
+  animation: ani-blur-fade-up 1.5s ease 3s forwards;
   opacity: 0;
 }
 
@@ -448,7 +447,8 @@ section:last-of-type {
 .about-section .hero .me-png {
   position: relative;
   height: 90vh;
-  animation: ani-blur-fade-up 2s ease;
+  opacity: 0;
+  animation: ani-blur-fade-up 2s ease 2.5s forwards;
 }
 
 .about-section .hero .me-png img {
@@ -525,7 +525,7 @@ section:last-of-type {
   width: 2px;
   background: linear-gradient(var(--line-color), var(--line-color) 7px, transparent 7px, transparent 14px);
   background-size: 100% 14px;
-  animation: ani-bg-v-line 22s infinite linear;
+  /* animation: ani-bg-v-line 22s infinite linear; */
   margin-top: 34px;
   position: relative;
 }
@@ -536,7 +536,8 @@ section:last-of-type {
   left: 1px;
   width: 38px;
   height: 38px;
-  animation: ani-spining-ball-v-line 22s infinite linear;
+  transform: translate(-50%, -100%);
+  /* animation: ani-spining-ball-v-line 22s infinite linear; */
   border-radius: 50%;
   border: 2px dashed var(--line-color);
   box-shadow: inset 0px 0px 0px 10px transparent;
@@ -834,7 +835,7 @@ body[data-theme="dark"] .contact-section .contact-links-container > div .persona
   top: 0;
   left: 0;
   height: 100vh;
-  height: 100svh;
+  height: 100dvh;
   width: 100%;
   z-index: 9999;
 }
@@ -847,21 +848,17 @@ body[data-theme="dark"] .contact-section .contact-links-container > div .persona
   height: 100%;
   background-color: black;
   animation: ani-slide-down 1.2s var(--ease-out-quart, ease) 2s forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.intro > div:last-child {
+.intro > div > div {
   overflow: hidden;
   width: 200px;
-  transition: all 1.2s var(--ease-out-quart, ease);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .intro img {
-  filter: invert(1);
   transform: translateY(110%);
   animation: ani-slide-up 1.5s var(--ease-out-quart, ease) 0.5s forwards;
-  transition: all 1s var(--ease-out-quart, ease);
 }

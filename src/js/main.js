@@ -195,13 +195,5 @@ allClickCopy.forEach(acc => {
 });
 
 setTimeout(() => {
-    const imgWrapper = intro.querySelector("div:last-child");
-    const img = intro.querySelector("img");
-    imgWrapper.style.top = "48px";
-    imgWrapper.style.width = "50px";
-    img.style.filter = `invert(${localTheme === "light" || !localTheme ? "0" : "0.9"})`;
-    setTimeout(() => {
-        intro.style.display = "none";
-        document.querySelector("#my_logo").style.opacity = 1;
-    }, 1200);
-}, 2000)
+    intro.style.display = "none";
+}, 3200)
