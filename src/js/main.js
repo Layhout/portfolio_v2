@@ -76,7 +76,10 @@ function openNav() {
     if (nav.dataset.open === "false") {
         nav.dataset.open = "true";
         navLinks.forEach((l, i) => l.style.transitionDelay = `${i * 0.09 + 0.1}s`);
-        navLinks[navLinks.length - 1].addEventListener("transitionend", () => navLinkContainer.style.setProperty("--ele-opacity", 1), { once: true });
+        navLinks[navLinks.length - 1].addEventListener("transitionend", () => {
+            if (nav.dataset.open === "true")
+                navLinkContainer.style.setProperty("--ele-opacity", 1)
+        }, { once: true });
     } else {
         nav.dataset.open = "false";
         navLinks.forEach((l, i) => l.style.transitionDelay = `${i * 0.09}s`);
