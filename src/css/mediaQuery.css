@@ -355,6 +355,10 @@
     background-color: var(--color-neutral-800);
   }
 
+  .work-section .portfolio-grid > .tilting-wrapper > .tilting-body::after {
+    display: none;
+  }
+
   .click-copy button {
     opacity: 0.5;
   }
