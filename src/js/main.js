@@ -12,7 +12,7 @@ const aboutMe = `A web/mobile developer with ${
 }+ years experience who's driven by an insatiable hunger for experience and knowledge. My ultimate ambition is to evolve into a proficient full-stack developer.`;
 const aboutMeP = document.querySelector("#about_me_text");
 const tiltingFXWrapper = document.querySelectorAll(".tilting-wrapper");
-const tilt_strength = 0.05;
+const tilt_strength = 0.07;
 const allClickCopy = document.querySelectorAll(".click-copy");
 const allSections = document.querySelectorAll("section");
 const allAos = document.querySelectorAll("[data-aos]");
@@ -147,10 +147,10 @@ document.addEventListener("mousemove", function (e) {
   const move_x = window.innerWidth / 2 - e.clientX;
   const move_y = window.innerHeight / 2 - e.clientY;
   allDFX.forEach(a => {
-    a.style.transform = `translate(${-(move_x * 0.02)}px, ${-(move_y * 0.05)}px)`;
+    a.style.transform = `translate3d(${-(move_x * 0.02)}px, ${-(move_y * 0.05)}px, 0)`;
   });
   allIDFX.forEach(a => {
-    a.style.transform = `translate(${move_x * 0.02}px, ${move_y * 0.05}px)`;
+    a.style.transform = `translate3d(${move_x * 0.02}px, ${move_y * 0.05}px, 0)`;
   });
 });
 
@@ -169,11 +169,11 @@ if (!window.matchMedia("(any-hover: none)").matches) {
       const halfY = this.scrollHeight / 2;
 
       const tiltBody = this.querySelector(".tilting-body");
-      tiltBody.style.transform = ` perspective(800px) rotateY(${(halfX - mouseX) * -tilt_strength}deg) rotateX(${(halfY - mouseY) * tilt_strength}deg)`;
+      tiltBody.style.transform = `perspective(800px) rotateY(${(halfX - mouseX) * -tilt_strength}deg) rotateX(${(halfY - mouseY) * tilt_strength}deg)`;
       tiltBody.style.transitionDuration = "0.1s";
 
       const topLayer = this.querySelector(".top-layer");
-      topLayer.style.transform = `translateX(${(mouseX / this.scrollWidth - 0.5) * 4}%) translateY(${(mouseY / this.scrollHeight - 0.5) * 4}%)`;
+      topLayer.style.transform = `translate3d(${(mouseX / this.scrollWidth - 0.5) * 4}%, 0, 0) translate3d(0, ${(mouseY / this.scrollHeight - 0.5) * 4}%, 0)`;
       topLayer.style.transitionDuration = "0.1s";
     });
 
