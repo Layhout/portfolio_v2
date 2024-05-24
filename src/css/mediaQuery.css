@@ -19,7 +19,7 @@
 
   .nav-bar .nav-links {
     position: static;
-    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
     flex-direction: column;
     align-items: stretch;
     transition: all 1s var(--ease-out-quart);
@@ -28,7 +28,7 @@
 
   .nav-bar .nav-links > li {
     text-align: center;
-    transform: translateY(0) scale(0.9);
+    transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 0.9);
     padding: 0.75rem 0;
     opacity: 0;
     transition: all 0.7s var(--ease-out-quart, ease);
@@ -36,7 +36,7 @@
   }
 
   .nav-bar[data-open="true"] .nav-links > li {
-    transform: translateY(0) scale(1);
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
     opacity: 1;
   }
 
@@ -112,7 +112,7 @@
   }
 
   .nav-bar[data-open="true"] .logo img {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -163,7 +163,7 @@
 
   .nav-bar .nav-links {
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
     flex-direction: row;
     align-items: center;
     padding-top: 0;
@@ -173,7 +173,7 @@
   .nav-bar .nav-links > li {
     transition: transform 0.7s var(--ease-out-quart, ease);
     cursor: pointer;
-    transform: translateY(100%);
+    transform: translate3d(0, 100%, 0);
     padding: 8px 18px;
     white-space: nowrap;
     font-size: 1rem;
@@ -181,11 +181,11 @@
   }
 
   .nav-bar[data-open="true"] .nav-links > li {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 
   .nav-bar[data-open="true"] .logo img {
-    transform: translateY(-110%);
+    transform: translate3d(0, -110%, 0);
   }
 
   .about-section .hero .name-wrapper h1 {
