@@ -847,7 +847,7 @@ body[data-theme="dark"] .contact-section .contact-links-container > div .persona
   width: 100%;
   height: 100%;
   background-color: black;
-  animation: ani-slide-down 1.2s var(--ease-out-quart, ease) 2s forwards;
+  /* animation: ani-slide-down 1.2s var(--ease-out-quart, ease) 2s forwards; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -860,5 +860,5 @@ body[data-theme="dark"] .contact-section .contact-links-container > div .persona
 
 .intro img {
   transform: translate3d(0, 110%, 0);
-  animation: ani-slide-up 1.5s var(--ease-out-quart, ease) 0.5s forwards;
+  /* animation: ani-slide-up 1.5s var(--ease-out-quart, ease) 0.5s forwards; */
 }

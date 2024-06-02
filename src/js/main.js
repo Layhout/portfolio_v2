@@ -7,9 +7,8 @@ const idleBgFX = document.querySelectorAll("#idle_bg_FX div");
 const allDFX = document.querySelectorAll(".drag-fx");
 const allIDFX = document.querySelectorAll(".drag-inv-fx");
 const hero = document.querySelector("#hero");
-const aboutMe = `A web/mobile developer with ${
-  new Date().getFullYear() - 2021
-}+ years experience who's driven by an insatiable hunger for experience and knowledge. My ultimate ambition is to evolve into a proficient full-stack developer.`;
+const aboutMe = `A web/mobile developer with ${new Date().getFullYear() - 2021
+  }+ years experience who's driven by an insatiable hunger for experience and knowledge. My ultimate ambition is to evolve into a proficient full-stack developer.`;
 const aboutMeP = document.querySelector("#about_me_text");
 const tiltingFXWrapper = document.querySelectorAll(".tilting-wrapper");
 const tilt_strength = 0.07;
@@ -17,6 +16,7 @@ const allClickCopy = document.querySelectorAll(".click-copy");
 const allSections = document.querySelectorAll("section");
 const allAos = document.querySelectorAll("[data-aos]");
 const intro = document.querySelector("#intro");
+const introLogo = document.querySelector("#intro img");
 
 let localTheme = localStorage.getItem("theme");
 
@@ -196,6 +196,13 @@ allClickCopy.forEach(acc => {
   });
 });
 
-setTimeout(() => {
-  intro.style.display = "none";
-}, 3200);
+introLogo.addEventListener("load", function () {
+  this.style.animation = "ani-slide-up 1.5s var(--ease-out-quart, ease) 0.5s forwards";
+  const bgDiv = intro.querySelector("div:first-child");
+  bgDiv.style.animation = "ani-slide-down 1.2s var(--ease-out-quart, ease) 2s forwards";
+
+  setTimeout(() => {
+    intro.style.display = "none";
+  }, 3200);
+})
+
