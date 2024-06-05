@@ -687,7 +687,7 @@ section:last-of-type {
 }
 
 .contact-section {
-  height: 60vh;
+  height: 35vh;
   display: flex;
   flex-direction: column;
 }
