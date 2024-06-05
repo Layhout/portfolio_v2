@@ -47,7 +47,7 @@ const lenis = new Lenis();
 lenis.on("scroll", e => {
   const { animatedScroll } = e;
   const scaleValue = Math.max(0.9, 1 - animatedScroll * 0.0001);
-  hero.style.transform = `scale(${scaleValue},${scaleValue},${scaleValue})`;
+  hero.style.transform = `scale3d(${scaleValue},${scaleValue},${scaleValue})`;
   hero.style.filter = `blur(${Math.min(10, animatedScroll * 0.01)}px)`;
   hero.style.opacity = Math.max(0.6, 1 - animatedScroll * 0.001);
 
@@ -196,13 +196,18 @@ allClickCopy.forEach(acc => {
   });
 });
 
-introLogo.addEventListener("load", function () {
-  this.style.animation = "ani-slide-up 1.5s var(--ease-out-quart, ease) 0.5s forwards";
+function runIntro() {
+  introLogo.style.animation = "ani-slide-up 1.5s var(--ease-out-quart, ease) 0.5s forwards";
   const bgDiv = intro.querySelector("div:first-child");
   bgDiv.style.animation = "ani-slide-down 1.2s var(--ease-out-quart, ease) 2s forwards";
 
   setTimeout(() => {
     intro.style.display = "none";
   }, 3200);
-})
+}
 
+if (introLogo.complete || introLogo.naturalWidth) {
+  runIntro()
+} else {
+  introLogo.addEventListener("load", runIntro)
+}
